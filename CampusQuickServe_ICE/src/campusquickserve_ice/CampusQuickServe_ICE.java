@@ -1,14 +1,13 @@
 package campusquickserve_ice;
 //JOptionnPane was imported to show dialog boxes
 import javax.swing.JOptionPane;
-
 //order class is created to show the methods related to the order
 class Order {
-    
-     //this method returns the final message shown to the customer
+
+    //this method returns the final message shown to the customer
     public static String createMessage(String customerName, String studentNumber, String item, int quantity,
 double sum, int discount, double vat, double total) {
-                // thank you message for the end of the slip
+        // thank you message for the end of the slip
         String Thanks = "Thank you for your order!";
 //This is the slip that contains all the details of the buyer 
 return "CampusQuickServe\n" +
@@ -30,7 +29,7 @@ return "CampusQuickServe\n" +
 "Total: R" + total + "\n" +
 Thanks;
     }
-    //this method was used to get the final result of the price aka the total
+//this method was used to get the final result of the price aka the total
 public static double calculateTotal(double pricePerItem, int quantity, double vat, int discount) {
 //this calculates the two numbers to get the subtotal and multiplies it 
 double subtotal = pricePerItem * quantity;
@@ -38,10 +37,9 @@ double subtotal = pricePerItem * quantity;
 double total = subtotal + vat - discount;
 //returns the total
 return total;
+    }
 }
-    
-
-    
+//Program runs in this main class
 public class CampusQuickServe_ICE {
 
 public static void main(String[] args) {
@@ -57,9 +55,11 @@ public static void main(String[] args) {
  double sum2 = (num1 + num2 + num3);
  int Discount = 0;
  final double VAT = 15;
- 
- //Call method to calculate final total
+//Call method to calculate final total
 double total = Order.calculateTotal(num1, Quantity, num3, Discount);
-
+//Call method to create the final receipt message 
+  String message = Order.createMessage(customerName, studentNumber, item, Quantity, sum1, Discount, VAT, total);
+  //Displays the message in a dialog box 
+  JOptionPane.showMessageDialog(null, message);
     }
-}}
+}
