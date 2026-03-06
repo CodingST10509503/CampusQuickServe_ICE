@@ -4,10 +4,50 @@ import javax.swing.JOptionPane;
 
 //order class is created to show the methods related to the order
 class Order {
+    
+     //this method returns the final message shown to the customer
+    public static String createMessage(String customerName, String studentNumber, String item, int quantity,
+double sum, int discount, double vat, double total) {
+                // thank you message for the end of the slip
+        String Thanks = "Thank you for your order!";
+//This is the slip that contains all the details of the buyer 
+return "CampusQuickServe\n" +
+// This is used to show the customers name 
+"Customer: " + customerName + "\n" +
+//shows the student number on the slip
+"Student Number: " + studentNumber + "\n" +
+// Shows what item was ordered 
+"Item Ordered: " + item + "\n" +
+// The quantity of the item that was ordered
+"Quantity: " + quantity + "\n" +
+//Item total in Rand 
+"Items total: R" + sum + "\n" +
+// How much discount was applied 
+"Discount: R" + discount + "\n" +
+//The Value added tax that was used
+"VAT: " + vat + "%\n" +
+//The final total calculated
+"Total: R" + total + "\n" +
+Thanks;
+    }
+    
 
-
+    
 public class CampusQuickServe_ICE {
 
 public static void main(String[] args) {
+//all the customers info
+ String customerName = "Sarah Moyo";
+ String studentNumber = "ST23014567";
+ String item = " Burger";
+ int Quantity = 2;
+ double num1 = 45.50;
+ double num2 = 45.50;
+ double sum1 = (num1 + num2);
+ double num3 = 13.65;
+ double sum2 = (num1 + num2 + num3);
+ int Discount = 0;
+ final double VAT = 15;
+
     }
 }}
