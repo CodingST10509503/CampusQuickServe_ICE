@@ -30,6 +30,15 @@ return "CampusQuickServe\n" +
 "Total: R" + total + "\n" +
 Thanks;
     }
+    //this method was used to get the final result of the price aka the total
+public static double calculateTotal(double pricePerItem, int quantity, double vat, int discount) {
+//this calculates the two numbers to get the subtotal and multiplies it 
+double subtotal = pricePerItem * quantity;
+//Calculates the total
+double total = subtotal + vat - discount;
+//returns the total
+return total;
+}
     
 
     
@@ -48,6 +57,9 @@ public static void main(String[] args) {
  double sum2 = (num1 + num2 + num3);
  int Discount = 0;
  final double VAT = 15;
+ 
+ //Call method to calculate final total
+double total = Order.calculateTotal(num1, Quantity, num3, Discount);
 
     }
 }}
